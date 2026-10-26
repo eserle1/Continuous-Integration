@@ -1,0 +1,29 @@
+name: FamousQuotes build 
+on: 
+  push: 
+    branches: 
+      - main 
+
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: read 
+      pages: write 
+      id-token: write 
+    environment: 
+      name: github-pages 
+ 
+    steps: 
+    - name: Checkout code 
+      uses: actions/checkout@v5 
+ 
+    - name: Setup Java 
+      uses: actions/setup-java@v5 
+      with: 
+        distribution: 'temurin' 
+        java-version: '25' 
+ 
+    - name: Build the project 
+      run: sh ./gradlew build 
