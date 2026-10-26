@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-public class YamlQuoteReader {
+public class YamlQuoteReader implements QuoteReader {
     private String filePath;
 
     public YamlQuoteReader(String filePath) {
